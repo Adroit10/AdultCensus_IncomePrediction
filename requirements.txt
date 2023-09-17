@@ -3,4 +3,4 @@ seaborn
 numpy
 flask
 scikit-learn
--e .
+#-e .
