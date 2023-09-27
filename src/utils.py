@@ -25,7 +25,7 @@ def evaluate_model(X_train,y_train,X_test,y_test,models):
         accuracy_report={}
         
         for i in range(len(models)):
-            model=list(model.values())[i]
+            model=list(models.values())[i]
             ## train model
             model.fit(X_train,y_train)
 
@@ -34,7 +34,7 @@ def evaluate_model(X_train,y_train,X_test,y_test,models):
 
             ## get the evaluation scores for the model
             test_model_score=accuracy_score(y_test,y_test_pred)
-            accuracy_report[list(model.keys())[i]]=test_model_score
+            accuracy_report[list(models.keys())[i]]=test_model_score
 
         return accuracy_report
 

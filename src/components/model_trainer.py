@@ -16,11 +16,11 @@ from dataclasses import dataclass
 
 @dataclass
 class ModelTrainerconfig:
-    trained_model_file=os.path.join('artifacts','model.pkl')
+    trained_model_file_path=os.path.join('artifacts','model.pkl')
 
 class ModelTrainer:
     def __init__(self):
-        self.trained_model_file_path=ModelTrainerconfig()
+        self.trained_model_file_config=ModelTrainerconfig()
         
 
     def initiate_model_training(self,train_arr,test_arr):
@@ -59,7 +59,7 @@ class ModelTrainer:
             logging.info(f'Best Model info ->, Model name: {best_model_name}, accuracy_score : {best_model_score}')
 
             save_object(
-                file_path=self.trained_model_file_path,
+                file_path=self.trained_model_file_config.trained_model_file_path,
                 obj=best_model
             )
         except Exception as e:
